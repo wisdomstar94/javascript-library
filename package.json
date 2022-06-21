@@ -1,0 +1,24 @@
+{
+  "name": "javascript-library",
+  "version": "1.0.0",
+  "description": "javascript 관련 다양한 라이브러리를 모아놓은 프로젝트 입니다.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "javascript",
+    "library",
+    "js",
+    "javascript library",
+    "js library"
+  ],
+  "author": "wisdomstar94@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "clipboard": "^2.0.11"
+  },
+  "devDependencies": {
+    "esbuild": "^0.14.47"
+  }
+}
