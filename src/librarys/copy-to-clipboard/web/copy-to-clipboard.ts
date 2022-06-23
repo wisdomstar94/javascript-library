@@ -49,7 +49,3 @@ export const copyToClipboard = (text: string): Promise<ICopyToClipboard.Result> 
     document.querySelector('body')?.appendChild(btnElement);
   });
 };
-
-if (typeof window !== 'undefined') {
-  (window as any).copyToClipboard = copyToClipboard;
-}
