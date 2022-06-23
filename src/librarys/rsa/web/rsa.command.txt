@@ -1,0 +1,9 @@
+## create key pair
+openssl genrsa -out keypair_priv.pem 2048
+
+## convert private key to pcks8
+openssl pkcs8 -topk8 -inform PEM -outform PEM -nocrypt -in keypair_priv.pem -out keypair_priv_pkcs8.pem
+
+## extract public part
+openssl rsa -in keypair_priv_pkcs8.pem -pubout -out keypair_pub.crt
+
