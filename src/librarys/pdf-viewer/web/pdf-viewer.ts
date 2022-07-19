@@ -57,11 +57,7 @@ export const loadPdfWithSvg = (pdfUrl: string, targetId: string): void => {
       // Get desired page
       pdf.getPage(i).then(function(page) {
         const scale = 1.5; 
-        const viewport = page.getViewport(scale); 
-        const canvas = document.createElement('canvas'); 
-        const context = canvas.getContext('2d'); 
-        canvas.height = viewport.height; 
-        canvas.width = viewport.width; // Get div#the-svg 
+        const viewport = page.getViewport({scale: scale}); 
         const svgContainer = document.createElement('svg'); // Set dimensions 
         svgContainer.style.width = viewport.width + 'px'; 
         svgContainer.style.height = viewport.height + 'px'; // SVG rendering by PDF.js 
@@ -69,7 +65,7 @@ export const loadPdfWithSvg = (pdfUrl: string, targetId: string): void => {
         page.getOperatorList().then(function (opList) { 
           const svgGfx = new SVGGraphics(page.commonObjs, page.objs); 
           return svgGfx.getSVG(opList, viewport); 
-        }).then(function (svg) { 
+        }).then(function(svg) { 
           svgContainer.appendChild(svg); 
         }); 
       });
