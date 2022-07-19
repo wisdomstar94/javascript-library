@@ -2,6 +2,9 @@ import * as pdfjsLib from 'pdfjs-dist/build/pdf';
 import { SVGGraphics } from 'pdfjs-dist';
 pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.worker.min.js';
 
+// https://stackoverflow.com/questions/62066037/render-pdf-js-page-like-real-html-elements-not-canvas-or-svg
+// https://javascript.hotexamples.com/examples/pdfjs-dist/SVGGraphics/getSVG/javascript-svggraphics-getsvg-method-examples.html
+
 export const loadPdfWithCanvas = (pdfUrl: string, targetId: string): void => {
   const loadingTask = pdfjsLib.getDocument(pdfUrl);
   loadingTask.promise.then(async(pdf) => {
